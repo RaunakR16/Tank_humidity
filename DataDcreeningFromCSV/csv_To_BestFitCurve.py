@@ -4,6 +4,10 @@ import matplotlib.pyplot as plt
 data = pd.read_csv('H:\Paper sensor with TANK\CODE FOR DATA SCREENING\DATA\sensor_data.csv', encoding='latin1')
 print(data.head())
 
+# Rest of your code remains the same
+y1 = data['Humidity (%)'].values
+y2 = data['Paper Sensor Value'].values
+
 # Create a figure and axis
 fig, ax1 = plt.subplots(figsize=(12, 6))
 
@@ -14,7 +18,7 @@ ax1.plot(y1, 'o-', label="DHT 11", color='blue')
 p1 = np.polyfit(np.arange(len(y1)), y1, 2)
 y1_fit = np.polyval(p1, np.arange(len(y1)))
 
-# Plot the best fit curve for y1
+# Plot the best-fit curve for y1
 ax1.plot(np.arange(len(y1)), y1_fit, '-', label="Fit: DHT 11", color='blue', linewidth=2)
 
 ax1.set_xlabel('Time (sec.)', fontsize=20, fontweight='bold')
@@ -30,7 +34,7 @@ ax2.plot(y2, 'o-', label="Paper-based sensor", color='#FF7F50')
 p2 = np.polyfit(np.arange(len(y2)), y2, 2)
 y2_fit = np.polyval(p2, np.arange(len(y2)))
 
-# Plot the best fit curve for y2
+# Plot the best-fit curve for y2
 ax2.plot(np.arange(len(y2)), y2_fit, '-', label="Fit: Paper-based sensor", color='#FF7F50', linewidth=2)
 
 ax2.set_ylabel('Serial value (Paper-based sensor)', fontsize=20, fontweight='bold', color='#FF7F50')
