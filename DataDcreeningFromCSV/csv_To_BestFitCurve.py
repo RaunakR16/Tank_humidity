@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 
 data = pd.read_csv('H:\Paper sensor with TANK\CODE FOR DATA SCREENING\DATA\sensor_data.csv', encoding='latin1')
