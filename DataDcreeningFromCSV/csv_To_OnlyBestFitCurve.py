@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-
 data = pd.read_csv('H:\Paper sensor with TANK\CODE FOR DATA SCREENING\DATA\sensor_data.csv', encoding='latin1')
 print(data.head())
 
@@ -11,8 +10,6 @@ y2 = data['Paper Sensor Value'].values
 
 # Create a figure and axis
 fig, ax1 = plt.subplots(figsize=(12, 6))
-
-
 
 # Fit a polynomial curve for y1 (degree 2 for example)
 p1 = np.polyfit(np.arange(len(y1)), y1, 2)
@@ -28,7 +25,6 @@ ax1.grid(True)
 
 # Create a secondary y-axis for y2
 ax2 = ax1.twinx()
-
 
 # Fit a polynomial curve for y2 (degree 2 for example)
 p2 = np.polyfit(np.arange(len(y2)), y2, 2)
