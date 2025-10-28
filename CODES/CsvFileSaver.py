@@ -2,10 +2,10 @@ import serial
 import csv
 import time
 
-# Open the serial port
+# Change COM port and baud rate
 ser = serial.Serial('COM3', 9600, timeout=1)  # Add a timeout to avoid hanging
 
-# Open the CSV file in append mode
+# Give a CSV file Name
 with open('sensor_data.csv', mode='a', newline='') as file:
     writer = csv.writer(file)
 
