@@ -5,16 +5,16 @@ import time
 # Number of samples to log
 num_samples = 1000
 
-# Update the COM port and baud rate
+# Change COM port and baud rate
 ser = serial.Serial('COM13', 115200, timeout=1)
 
-# Open CSV file for appending
-with open('Data01s', mode='a', newline='') as file:
+# Give a CSV file Name
+with open('Data01s.csv', mode='a', newline='') as file:
     writer = csv.writer(file)
 
     # Write header if the file is empty
     if file.tell() == 0:
-        writer.writerow(['Timestamp', 'Analog Value'])
+        writer.writerow(['Timestamp', 'ADC Value'])
 
     print(f"Started logging {num_samples} analog data samples...")
 
