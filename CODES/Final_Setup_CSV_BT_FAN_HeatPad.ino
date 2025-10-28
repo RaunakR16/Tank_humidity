@@ -5,13 +5,13 @@
 #define DHT11PIN A0   // Define pin A0 for DHT11 sensor
 #define RELAY1PIN 7   // Define pin 7 for Fan 1 relay
 #define RELAY2PIN 5   // Heat pad
-#define HC05_TX 10    // Define pin 10 as HC-05 TX
-#define HC05_RX 11    // Define pin 11 as HC-05 RX
+// #define HC05_TX 10    // Define pin 10 as HC-05 TX
+// #define HC05_RX 11    // Define pin 11 as HC-05 RX
 #define PaperSensorPin A3 // Define pin A3 for the paper sensor
 
 // Sensor and communication objects
 dht11 DHT11;
-SoftwareSerial Bluetooth(HC05_TX, HC05_RX); // Create a Bluetooth serial object
+// SoftwareSerial Bluetooth(HC05_TX, HC05_RX); // Create a Bluetooth serial object
 
 // Global variables
 bool fan1On = false; // Keeps track of Fan 1 state
@@ -24,7 +24,7 @@ int PaperSensorValue = 0; // Variable to store paper sensor reading
 
 void setup() {
   Serial.begin(9600);         // Start serial communication for monitoring
-  Bluetooth.begin(9600);      // Start communication with HC-05 module
+  // Bluetooth.begin(9600);      // Start communication with HC-05 module
 
   pinMode(RELAY1PIN, OUTPUT); // Fan 1 relay
   pinMode(RELAY2PIN, OUTPUT); // Heat pad relay
